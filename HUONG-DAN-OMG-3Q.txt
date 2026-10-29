@@ -26,7 +26,6 @@ NẾU GAME THAY ĐỔI HOẶC KẾT NỐI LỖI
 - Nếu không kết nối, kiểm tra thiết bị Android đã chạy và cổng ADB trong MuMu. Mặc định trên máy này là 127.0.0.1:16384.
 - Nếu mang mã sang máy khác, cài Python 3.11 và chạy Cai-dat.cmd một lần trước khi mở tool.
 
-Phần Kịch bản nâng cao là công cụ bổ sung cho các tác vụ sẽ làm sau; không cần thiết lập kịch bản để đăng nhập.
 
 PHÓ BẢN CỖ MÁY THỜI GIAN
 

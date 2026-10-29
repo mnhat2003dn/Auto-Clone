@@ -51,7 +51,7 @@ tích lại A → Tiếp tục. Chọn tất cả / Bỏ chọn tất cả giúp
 Làm mới nạp lại danh sách và bỏ các dấu tích, không làm mất tác vụ đang chạy.
 
 - **Tạm dừng**: chặn các thao tác tiếp theo của tool trên các máy được tích,
-  kể cả tác vụ đăng nhập / phó bản / trang bị / kịch bản sau khi mở game.
+  kể cả tác vụ đăng nhập / phó bản / trang bị sau khi mở game.
 - **Tiếp tục**: cho các máy được tích tiếp tục tác vụ đang tạm dừng.
 - **Dừng tác vụ**: hủy tác vụ trên các máy được tích; không tắt game hay giả lập.
   Muốn chạy lại cần chủ động gửi lệnh mới. Tiếp tục không khôi phục tác vụ đã hủy.
@@ -60,7 +60,7 @@ Làm mới nạp lại danh sách và bỏ các dấu tích, không làm mất t
   Mở lại hộp thoại để điều khiển tiếp. Thoát toàn bộ tool sẽ yêu cầu dừng mọi tác vụ.
 
 Ở cửa sổ chính, chọn **Thao tác trên** theo tên máy đã kết nối trước khi chạy
-đăng nhập, phó bản, trang bị hoặc kịch bản. Có thể bắt đầu tác vụ trên A rồi chuyển
+đăng nhập, phó bản, trang bị. Có thể bắt đầu tác vụ trên A rồi chuyển
 sang B để chạy tác vụ khác. Mỗi máy chỉ nhận một tác vụ tại một thời điểm;
 đổi máy trên giao diện không đổi đích ADB của tác vụ đã chạy. Các thao tác chính
 áp dụng cho máy ở ô Thao tác trên; checkbox trong hộp thoại dùng để gửi lệnh điều khiển.
@@ -100,7 +100,8 @@ Nếu gặp lỗi, giữ nguyên hàng chưa hoàn thành và báo lỗi, không
 
 ## Luồng đăng nhập
 
-`omg3q_tool.py` cung cấp giao diện Tkinter, kết nối ADB và kịch bản nâng cao.
+`omg3q_tool.py` cung cấp giao diện Tkinter và kết nối ADB nội bộ qua instance.
+Gói OMG 3Q được dùng cố định; không cần nhập địa chỉ ADB hoặc chọn gói game thủ công.
 `login_engine.py` nhận diện ảnh từ `assets/login/`, xử lý ZingID, đổi phiên đã lưu,
 chọn server có nhân vật và xác nhận màn hình chính qua hai lần quan sát liên tiếp.
 Các lần nhập đều xóa cả hai phía con trỏ vì Ctrl+A không hoạt động trong biểu mẫu game.
@@ -191,7 +192,6 @@ Kết quả tổng hợp và ảnh từng tướng được lưu trong thư mụ
 - `account.txt`: mỗi dòng một tên đăng nhập, UTF-8, hỗ trợ BOM.
 - `credentials.local.json`: thuộc tính `common_password` chứa mật khẩu chung.
 - `login_settings.json`: lựa chọn vào game, server đã chơi và quyền tích ô điều khoản.
-- `omg3q_steps.json`: kết nối và kịch bản nâng cao; không chứa mật khẩu.
 
 Tài khoản, mật khẩu, lựa chọn cá nhân, môi trường Python và tệp chạy thử được loại khỏi Git.
 Mật khẩu được chuyển tới ADB qua stdin, không xuất hiện trong tham số tiến trình Windows.
